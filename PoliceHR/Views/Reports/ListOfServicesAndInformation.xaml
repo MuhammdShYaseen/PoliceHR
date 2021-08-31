@@ -1,0 +1,202 @@
+﻿<Window x:Class="PoliceHR.Views.Reports.ListOfServicesAndInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoliceHR.Views.Reports"
+        mc:Ignorable="d"
+        FlowDirection="LeftToRight"
+        Title="لائحة معلومات و خدمات و أوصاف" d:DesignWidth="800.497" d:DesignHeight="1847.418">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button x:Name="BtnPrint1" VerticalAlignment="Top"  HorizontalAlignment="Right" BorderBrush="Transparent" Height="50" Width="60"  Background="#393e46 " Click="BtnPrint1_Click"  Margin="5">
+                <Button.Content>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Image Source="pack://application:,,,/Images/printer.png" Stretch="Fill" Width="auto" HorizontalAlignment="Center" Margin="0,0,0,0" />
+                        <TextBlock Text="طباعة 1" Foreground="#eeee" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="7"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <FlowDocumentScrollViewer  FlowDirection="RightToLeft" x:Name="FirstPage" Margin="0,60,0,0">
+            <FlowDocument PagePadding="3">
+                <Section>
+                    <Paragraph BorderBrush="Black" BorderThickness="3" >
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                                <TextBlock Text="الجمهورية العربية السورية" FontFamily="Arial" FontWeight="Bold" Margin="2" FontSize="14"/>
+                                <TextBlock Text="القيادة العامة للجيش و القوات المسلحة" FontFamily="Arial" FontWeight="Bold" Margin="2" FontSize="14"/>
+                                <TextBlock x:Name="txtUnit" Text=" الوحدة :" FontFamily="Arial" FontWeight="Bold" Margin="2" FontSize="14"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Margin="140,0,0,0">
+                                <TextBlock Text="لائحة معلومات و خدمات و أوصاف" FontFamily="Arial" FontWeight="Bold" Margin="2" TextAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel  Margin="130,0,0,0">
+                                <TextBlock Text="نموذج رقم (77) معدل" FontFamily="Arial" FontWeight="Bold" Margin="2" TextAlignment="Center" HorizontalAlignment="Center" TextDecorations="Underline"/>
+                                <TextBlock Text="2017" FontFamily="Arial" FontWeight="Bold" Margin="2" TextAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Paragraph>
+                </Section>
+                <Section Margin="0,0,0,0">
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3" Margin="0,0,0,2" >
+                        <StackPanel>
+                            <StackPanel Grid.Row="0" Grid.ColumnSpan="5">
+                                <TextBlock Text="الأحوال المدنية" TextAlignment="Center" TextDecorations="Underline" FontFamily="Arial" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock x:Name="txtFrstLstName" Text="الاسم و الشهرة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtBrithDate" Text="تاريخ الولادة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtFather" Text="اسم الأب :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtStaticPhone" Text="رقم الهاتف الثابت (ارضي) :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtPrivetR" Text="مؤهلاته الخاصة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLang" Text="اللغات التي يتقنها :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtFamilyState" Text="وضعه العائلي :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock x:Name="txtRank" Text="الرتبة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtBlock" Text="القيد :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtAdress" Text="عنوان الاقامة المدني :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtMobile" Text="رقم الهاتف الجوال (موبايل) :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtDgree" Text="الشهادات العلمية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtWrite" Text="كتابة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtChildCount" Text="عدد الأولاد :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock x:Name="txtMNum" Text="الرقم العسكري :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtCity" Text="القضاء.....المحافظة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock Text="" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock Text="" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock Text="" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtSpeak" Text="محادثة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtDC" Text="شعبة التجنيد :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </BlockUIContainer>
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3">
+                        <StackPanel>
+                            <StackPanel Grid.Row="0" Grid.ColumnSpan="5">
+                                <TextBlock Text="الأحوال العسكرية" TextAlignment="Center" TextDecorations="Underline" FontFamily="Arial" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock x:Name="txtStartConscription" Text="تاريخ بدأ الخدمة الإلزامية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtStartDate" Text="تاريخ التطوع :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtClass" Text="الاختصاص :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtEndDate" Text="تاريخ انتهاء الخدمة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLayoffNum" Text="أمر القاضي بالتسريح رقمه :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLostTimes" Text="مدة الانفصال(الخدمة المفقودة) :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock  Text="سبب الانفصال(الخدمة المفقودة) :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtOrderLostTimeNum" Text="أمر القاضي بذلك رقمه :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLastReturn" Text="تاريخ العودة للمرة الأخيرة :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock x:Name="txtTotalOfService" Text="مجموع الخدمات لغاية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                        <DatePicker Name="txtToDate" HorizontalAlignment="Stretch" Width="110" />
+                                    </StackPanel>
+                                    <TextBlock x:Name="txtTotalOfJoins" Text="مجموع الضمائم تاريخ البداية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtTotalOfJoinsTo" Text="مجموع الضمائم لغاية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <TextBlock x:Name="txtEndConscription" Text="تاريخ انتهائها :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtStartRank"  Text="الرتبة التي تطوع بها :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtCurrentClass" Text="العمل المسند أليه :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLayOffReason" Text="سبب التسريح :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtLayOffDate" Text="تاريخه :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtStartOfLostTime" Text="من تاريخ :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtReasonLostTime" Text="" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtOrderLostTimeDate" Text="تاريخه :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtReturnOrderNum" Text="بموجب الامر رقم :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtTotalServiceYMD" Text="يوم شهر سنة" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtEndJoinDate" Text="تاريخ النهاية :" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                    <TextBlock x:Name="txtTotalOfJoinsYMD" Text="يوم شهر سنة" FontFamily="Arial" FontSize="17" Margin="2"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="الاستبقاء و الاستدعاء بعد نهاية الخدمة" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtStayAndCall" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtStayAndCall2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="الدورات التدريبية و الاحتياطية" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtCycls" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtCycls2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="دورات التدريب و الاختصاص الاطلاعية (مع ذكر بدايتها و نهايتها)" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtLookCycle" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtLookCycle2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="دورات الاختصاص و التدريب المؤهلة للترفيع (مع ذكر بدايتها و نهايتها)" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtClassUpgradeCyles" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtClassUpgradeCyles2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="تسلسل الترفيعات للرتب (مع ذكر التواريخ و الدرجات)" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtUpgrades" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtUpgrades2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="أوامر الإيفاد (مع ذكر تاريخ الإيفاد و العودة)" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtTravels" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="txtTravels2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </BlockUIContainer>
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3" Margin="0,0,0,2">
+                        <StackPanel>
+                            <TextBlock Text="تاريخ الإقاف عن الطيران  /  /  السبب :.................." FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="الألعاب الرياضية التي يتقنها :.................." FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="الفرار : تاريخ الفرار" FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="مجموع العقوبات بتاريخ :" FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="عقوباته في السنة الأخيرة :" FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="تاريخ اخر عقوبة" FontFamily="Arial" FontSize="16" Margin="2"/>
+                            <TextBlock Text="الأحكام القضائية (مع ذكر تاريخ بدأ و نهاية الحكم و التوقيفات الخاصة بتنفيذ الأحكام)" FontFamily="Arial" FontSize="17" Margin="2" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock x:Name="txtLegalState" Text=".................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </BlockUIContainer>
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3" Margin="0,0,0,2">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="التنويهات و الثناءات و الأوسمة" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtDecors" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtDecors2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock Text="المواقع و العمليات الحربية التي اشترك بها" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock Text="الإصابات الناجمة أو غير الناجمة عن الخدمة" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtAcc" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtAcc2" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </BlockUIContainer>
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3" Margin="0,0,0,2">
+                        <StackPanel>
+                            <TextBlock Text="بيان الخدمة و الأوضاع المختلفة" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtEndRep" Text="..........................." FontFamily="Arial" FontSize="16" Margin="2" HorizontalAlignment="Center"/>
+                            <TextBlock Text="موجز الأوصاف لمدة ثلاثة سنوات بما فيها العام الحالي" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="txtDesBeforeLastYear" Text="العام السابق للعام الماضي : " FontFamily="Arial" FontSize="16" Margin="2" />
+                            <TextBlock x:Name="txtDesLastYear" Text="العام الماضي : " FontFamily="Arial" FontSize="16" Margin="2" />
+                            <TextBlock x:Name="txtThisYear" Text="العام الحالي أو وقت تحرير هذا النموذج : " FontFamily="Arial" FontSize="16" Margin="2" />
+                            <TextBlock x:Name="txtValueOfDgree" Text="درجة الأخلاق التي يستحقها : " FontFamily="Arial" FontSize="16" Margin="2" />
+                        </StackPanel>
+                    </BlockUIContainer>
+                    <BlockUIContainer BorderBrush="Black" BorderThickness="3" Margin="0,0,0,2">
+                        <StackPanel Orientation="Horizontal">
+                            <Border VerticalAlignment="Top"  HorizontalAlignment="Right" BorderBrush="Black" Margin="2" BorderThickness="2">
+                                <StackPanel>
+                                    <TextBlock Text="تدقيق إدارة القوى البشرية بوزارة الدفاع" FontFamily="Arial" FontSize="16" Margin="2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="رقم ................................تاريخ   /   /    " FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="الـمــعـلـومــات الـواردة فــي هــذه الـلائـحـة مــطـابــقــة لـقــيـود              " FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="إدارة القوى البشرية بوزارة الدفاع عدا ما صحح بالأحمر" FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="ووقع عليها بمعرفتنا" FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="رتبة و اسم و شهرة ................................................." FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="مدير أدارة القوى البشرية بوزارة الدفاع .........................." FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="التوقيع ..............................................................." FontFamily="Arial" FontSize="16" Margin="2" />
+                                </StackPanel>
+                            </Border>
+                            <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Black" Margin="2" BorderThickness="2">
+                                <StackPanel >
+                                    <TextBlock Text="رقم ....................................تاريخ   /   /    " FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="رتبة و اسم و شهرة ......................................................" FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="قائد الوحدة ................................................................" FontFamily="Arial" FontSize="16" Margin="2" />
+                                    <TextBlock Text="التوقيع ....................................................................." FontFamily="Arial" FontSize="16" Margin="2" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </BlockUIContainer>
+                </Section>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

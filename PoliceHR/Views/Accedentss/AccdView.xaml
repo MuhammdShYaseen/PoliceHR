@@ -1,0 +1,86 @@
+﻿<Page x:Class="PoliceHR.Views.Accedentss.AccdView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PoliceHR.Views.Accedentss"
+      xmlns:vm ="clr-namespace:PoliceHR.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Palantes" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="auto" Width="auto">
+    <Page.Resources>
+        <vm:ImageConverter x:Key="ImgC"/>
+        <vm:YesOrNo x:Key="YesNo"/>
+    </Page.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button VerticalAlignment="Top"  HorizontalAlignment="Right" BorderBrush="Transparent" Height="50" Width="50"  Background="#393e46 " Click="Button_Click" Margin="5">
+                <Button.Content>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Image Source="pack://application:,,,/Images/printer.png" Stretch="Fill" Width="auto" HorizontalAlignment="Center" Margin="0,0,0,0" />
+                        <TextBlock Text="طباعة" Foreground="#eeee" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="7"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name="DokGrid" Margin="0,40,0,38" >
+            <TextBlock x:Name="txtName" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" FontSize="20"/>
+            <DataGrid x:Name="GrdAccd" VerticalAlignment="Stretch" Height="auto" Width="auto" FrameworkElement.FlowDirection="RightToLeft" AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalContentAlignment="Right" HorizontalAlignment="Stretch" CanUserDeleteRows="False" CanUserAddRows="False" IsReadOnly="True" VerticalScrollBarVisibility="Auto" MouseDoubleClick="GrdAccd_MouseDoubleClick"  SelectionChanged="GrdAccd_SelectionChanged" Background="#393e46" Foreground="#eee">
+                <DataGrid.ContextMenu>
+                    <ContextMenu Background="#393e46">
+                        <MenuItem x:Name="MIDelete" Header="حذف"  Foreground="Red" Click="MIDelete_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#00adb5" />
+                        <Setter Property="Foreground" Value="#eeee" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#00d4de" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style BasedOn="{StaticResource {x:Type DataGridRow}}" TargetType="{x:Type DataGridRow}">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="CAccidentsDate" Binding="{Binding AccidentsDate,StringFormat='{}{0:MM/dd/yyyy}'}" FrameworkElement.FlowDirection="RightToLeft" Header="تاريخ الحادث" Width="Auto"/>
+                    <DataGridTextColumn x:Name="CMedicReport" Binding="{Binding MedicReport}" FrameworkElement.FlowDirection="RightToLeft" Header="التقرير الطبي" Width="Auto"/>
+                    <DataGridTextColumn x:Name="CIsAtWork" Binding="{Binding IsAtWork,Converter={StaticResource ResourceKey=YesNo}}" FrameworkElement.FlowDirection="RightToLeft" Header="هل هي اصابة عمل ؟" Width="Auto"/>
+                    <DataGridTemplateColumn x:Name="CElmPhoto"   Header="عرض تفاصيل الضبط" Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="BtnViewSeizure" Click="BtnViewSeizure_Click" DataContext="{Binding AccidentsSeizure}" Content="عرض ضبط الحادث"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Button x:Name="BtnAddEdit" Click="BtnAddEdit_Click"  Content="اضافة" VerticalAlignment="Bottom" Margin="2" Background="#00adb5" BorderBrush="#00adb5" Foreground="#eeee"/>
+    </Grid>
+</Page>

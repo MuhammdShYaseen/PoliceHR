@@ -1,0 +1,36 @@
+﻿<Application x:Class="PoliceHR.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PoliceHR"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Background" Value="#393e46 " />
+                <Setter Property="Foreground" Value="#eeee " />
+                <Setter Property="BorderBrush" Value="#393e46 " />
+            </Style>
+            <Style TargetType="{x:Type Window}" x:Key="MyWindowStyle">
+                <Setter Property="AllowsTransparency" Value="True"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Opacity="0.1" Color="#393e46"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="WindowChrome.WindowChrome">
+                    <Setter.Value>
+                        <WindowChrome CaptionHeight="1" CornerRadius ="0" ResizeBorderThickness="4" GlassFrameThickness="0"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="MaxHeight" Value="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}"/>
+                <Setter Property="MaxWidth" Value="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

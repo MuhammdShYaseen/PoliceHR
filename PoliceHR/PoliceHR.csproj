@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon>police-badge.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\AddPhoto.png" />
+    <None Remove="Images\cv.png" />
+    <None Remove="Images\floppy-disk.png" />
+    <None Remove="Images\Header.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\info.png" />
+    <None Remove="Images\intm.jpeg" />
+    <None Remove="Images\loader.gif" />
+    <None Remove="Images\loupe.png" />
+    <None Remove="Images\maccess.png" />
+    <None Remove="Images\printer.png" />
+    <None Remove="Images\rec.png" />
+    <None Remove="Images\searchp.png" />
+    <None Remove="Images\server.png" />
+    <None Remove="Images\teamwork.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="3.2.1-ci1990" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.0-beta" />
+    <PackageReference Include="System.Data.OleDb" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AddPhoto.png" />
+    <Resource Include="Images\cv.png" />
+    <Resource Include="Images\floppy-disk.png" />
+    <Resource Include="Images\Header.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\info.png" />
+    <Resource Include="Images\intm.jpeg" />
+    <Content Include="Images\loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\loupe.png" />
+    <Resource Include="Images\maccess.png" />
+    <Resource Include="Images\printer.png" />
+    <Resource Include="Images\rec.png" />
+    <Resource Include="Images\searchp.png" />
+    <Resource Include="Images\server.png" />
+    <Resource Include="Images\teamwork.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.VCRTForwarders.140" Version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\SearchForDate\" />
+  </ItemGroup>
+
+</Project>

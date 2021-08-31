@@ -1,0 +1,37 @@
+﻿<Page x:Class="PoliceHR.Views.HomePgs.AboutUs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PoliceHR.Views.HomePgs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Margin="5"
+      Title="AboutUs"
+      Background="#393e46">
+    
+    <Grid>
+        <Border VerticalAlignment="Top"  HorizontalAlignment="Center"  Margin="10" BorderThickness="2" BorderBrush="#2196f3" Background="#222831">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" >
+                <TextBlock Text="الجمهورية العربية السورية" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Right" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="وزارة الداخلية" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Right" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="قيادة قوات حفظ الأمن و النظام" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Right" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="قســم الـمـعـلـومـاتـيـة" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Right" Margin="3" Foreground="#2196f3"/>
+            </StackPanel >
+        </Border>
+        <Border VerticalAlignment="Center"  HorizontalAlignment="Center"  Margin="10" BorderThickness="2" BorderBrush="#2196f3" Background="#222831" >
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" >
+                <TextBlock Text="برنامج أدارة الموارد البشرية الخاص بعناصر قوى الأمن الداخلي" FontSize="27" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="يقدم هذا البرنامج  حلولاً متكاملة لأرشفة اسماء العناصر و كافة المتعلقات بذاتياتهم " FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="بما ينسجم مع الوسائل الحديثة و العصرية للتعامل مع الموارد البشرية " FontSize="17"  FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+            </StackPanel >
+        </Border>
+        <Border VerticalAlignment="Bottom"  HorizontalAlignment="Center"  Margin="10" BorderThickness="2" Background="#222831" BorderBrush="#2196f3">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" >
+                <TextBlock Text="برمجة التطبيق" FontSize="19" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="الملازم أول " FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="محمد عثمان شيخ ياسين" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+                <TextBlock Text="رئيس قسم المعلوماتية تكليفا" FontSize="17" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" Margin="3" Foreground="#2196f3"/>
+            </StackPanel >
+        </Border>
+    </Grid>
+</Page>

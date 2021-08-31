@@ -1,0 +1,146 @@
+﻿<Window x:Class="PoliceHR.Views.EditElement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoliceHR.Views"
+        mc:Ignorable="d"
+       
+        Title="التعديل على العنصر" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MyWindowStyle}" 
+        WindowStyle="None" d:DesignWidth="1397.497" d:DesignHeight="847.418">
+    <Grid>
+        <DockPanel x:Name="RootWindow" Background="#222831" >
+            <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" MouseDown="TitleBar_MouseDown" VerticalAlignment="Stretch" Margin="0" Background="#222831" >
+                <Button MouseLeave="CloseButton_MouseLeave" MouseEnter="CloseButton_MouseEnter" x:Name="CloseButton" Width="50" Margin="2"  Click="CloseButton_Click" DockPanel.Dock="Left"  Background="#222831" BorderBrush="#FF222831">
+                    <Button.Content>
+                        <Grid>
+                            <TextBlock Text="X"  Foreground="#eeee" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="MinButton" Margin="2" Width="50"  Background="#FF222831" Click="MinButton_Click" DockPanel.Dock="Left" BorderBrush="#FF222831">
+                    <Button.Content>
+                        <Grid>
+                            <TextBlock Text="__" Foreground="#eeee" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Background="#222831"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <TextBlock Text="التعديل على البيانات الاساسية للعنصر" TextAlignment="Center"   Background="#222831" VerticalAlignment="Center" Foreground="#eeee"  Height="30" FontWeight="Bold" FontSize="20" />
+            </DockPanel>
+            <ContentControl Content="{Binding CurrentPage}" />
+        </DockPanel>
+        <Grid x:Name="GrdTexts" Margin="5,30,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock   Text="اسم العنصر"   FontSize="15" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="اسم الكنية"   FontSize="15" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="اسم الاب"      FontSize="15" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="اسم الام"      FontSize="15" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="مكان الولادة"  FontSize="15" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="تاريخ الولادة" FontSize="15" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="اسم و رقم الخانة" FontSize="15" Grid.Column="5" Grid.Row="6" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+
+            <TextBox x:Name="txtName" Grid.Column="4" Grid.Row="0" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"  />
+            <TextBox x:Name="txtLastN" Grid.Column="4" Grid.Row="1" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"  />
+            <TextBox x:Name="txtFatherN" Grid.Column="4" Grid.Row="2" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <TextBox x:Name="txtMother" Grid.Column="4" Grid.Row="3" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <TextBox x:Name="txtLocation" Grid.Column="4" Grid.Row="4" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <DatePicker x:Name="txtBrith" Grid.Column="4" Grid.Row="5"  HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Background="Transparent" Foreground="#eee" />
+            <TextBox x:Name="txtBlock"  Grid.Column="4" Grid.Row="6" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"  />
+
+            <TextBlock Text="العنوان"   FontSize="15" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الرقم العسكري"   FontSize="15" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الرقم الوطني"      FontSize="15" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الوضع العائلي"      FontSize="15" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="شعبة التجنيد"  FontSize="15" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الوضع في الخدمة" FontSize="15" Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="نوع الهوية" FontSize="15" Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBox x:Name="txtAdress" Grid.Column="2" Grid.Row="0" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <TextBox x:Name="txtMNumber" Grid.Column="2" Grid.Row="1" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <TextBox x:Name="txtIDNumber" Grid.Column="2" Grid.Row="2" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"/>
+            <ComboBox x:Name="txtFamilyState" Grid.Column="2" Grid.Row="3" Background="Transparent" Foreground="#eeee"  HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" HorizontalContentAlignment="Center">
+                <ListBoxItem Background="#393e46">متزوج</ListBoxItem>
+                <ListBoxItem Background="#393e46">عازب</ListBoxItem>
+                <ListBoxItem Background="#393e46">مطلق</ListBoxItem>
+            </ComboBox>
+            <TextBox x:Name="txtRdev" Grid.Column="2" Grid.Row="4" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"  />
+            <ComboBox x:Name="txtServicState" HorizontalContentAlignment="Center" Foreground="#eee" Background="Transparent" Grid.Column="2" Grid.Row="5"  HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" >
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Setter Property="Background" Value="#393e46" />
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <ComboBox x:Name="txtIdType" Grid.Column="2" Grid.Row="6" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Width="auto" Margin="2" Foreground="#eee" Background="Transparent" >
+                <ListBoxItem Background="#393e46">قديمة</ListBoxItem>
+                <ListBoxItem Background="#393e46">جديدة</ListBoxItem>
+            </ComboBox>
+            <TextBlock Text="الجنس"   FontSize="15" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="هل هو مجند ؟"   FontSize="15" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="رقم التجنيد"      FontSize="15" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="تاريخ بدأ الخدمة"      FontSize="15" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الرتبة"  FontSize="15" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="صورة شخصية" FontSize="15" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <ComboBox x:Name="txtGender" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Background="Transparent"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Foreground="#eee">
+                <ListBoxItem Background="#393e46">ذكر</ListBoxItem>
+                <ListBoxItem Background="#393e46">انثى</ListBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="txtIsRes" Grid.Column="0" Grid.Row="1" Foreground="#eee" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Background="Transparent" >
+                <ListBoxItem Background="#393e46">مجند</ListBoxItem>
+                <ListBoxItem Background="#393e46">متطوع</ListBoxItem>
+            </ComboBox>
+            <TextBox x:Name="txtResNoteN" Grid.Column="0" Grid.Row="2" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2" />
+            <DatePicker x:Name="txtServiceStart" Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Stretch"    VerticalAlignment="Center" Width="auto" Margin="2" Background="Transparent" Foreground="#eee"/>
+            <ComboBox x:Name="txtRank" Grid.Column="0" Background="Transparent" Foreground="#eee" Grid.Row="4"  HorizontalAlignment="Stretch"   VerticalAlignment="Center" Width="auto" Margin="2" HorizontalContentAlignment="Center">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Setter Property="Background" Value="#393e46" />
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <Button x:Name="BtnAddUnit" Click="BtnAddUnit_Click"  Content="اضافة وحدة"  Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="4" Margin="4" Background="#00adb5" BorderBrush="#00adb5" Foreground="#eeee" />
+            <Button x:Name="BtnSelectPhoto" Click="BtnSelectPhoto_Click" Grid.Column="0" Grid.Row="5" Grid.RowSpan="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Margin="2" Background="#393e46" BorderBrush="Transparent">
+                <Button.Content>
+                    <Image x:Name="ImgElementImage"  Source="pack://application:,,,/Images/AddPhoto.png" Stretch="Fill"/>
+                </Button.Content>
+            </Button>
+            <TextBlock  Text="الوحدة" FontSize="15" Grid.Column="5" Grid.Row="7" HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center"/>
+            <ComboBox x:Name="txtunits" HorizontalContentAlignment="Center" Foreground="#eee" Background="Transparent" Grid.Column="4" Grid.Row="7"  HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" >
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Setter Property="Background" Value="#393e46" />
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <TextBlock  Text="المحافظة" FontSize="15" Grid.Column="3" Grid.Row="7" HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center"/>
+            <ComboBox x:Name="txtCity" HorizontalContentAlignment="Center" Foreground="#eee" Background="Transparent" Grid.Column="2" Grid.Row="7"  HorizontalAlignment="Stretch"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" >
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Setter Property="Background" Value="#393e46" />
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <Button x:Name="BtnAddELM" Click="BtnAddELM_Click"  Content="حفظ التعديلات"  Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="6" Margin="4" />
+        </Grid>
+    </Grid>
+</Window>
+

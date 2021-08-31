@@ -1,0 +1,129 @@
+﻿<Window x:Class="PoliceHR.Views.Children.ChildAddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoliceHR.Views.Children"
+        mc:Ignorable="d"
+        Title="اضافة \ تعديل الاولاد" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MyWindowStyle}" 
+        WindowStyle="None" d:DesignWidth="1397.497" d:DesignHeight="847.418">
+    
+    <Grid>
+        <DockPanel x:Name="RootWindow" Background="#222831" >
+            <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" MouseDown="TitleBar_MouseDown" VerticalAlignment="Stretch" Margin="0" Background="#222831" >
+                <Button MouseLeave="CloseButton_MouseLeave" MouseEnter="CloseButton_MouseEnter" x:Name="CloseButton" Width="50" Margin="2"  Click="CloseButton_Click" DockPanel.Dock="Left"  Background="#222831" BorderBrush="#FF222831">
+                    <Button.Content>
+                        <Grid>
+                            <TextBlock Text="X"  Foreground="#eeee" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="MinButton" Margin="2" Width="50"  Background="#FF222831" Click="MinButton_Click" DockPanel.Dock="Left" BorderBrush="#FF222831">
+                    <Button.Content>
+                        <Grid>
+                            <TextBlock Text="__" Foreground="#eeee" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Background="#222831"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+                <TextBlock Text="اضافة \ تعديل الاولاد" TextAlignment="Center"   Background="#222831" VerticalAlignment="Center" Foreground="#eeee"  Height="30" FontWeight="Bold" FontSize="20" />
+            </DockPanel>
+            <ContentControl Content="{Binding CurrentPage}" />
+        </DockPanel>
+        <Grid x:Name="GrdTexts" Margin="5,30,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock   Text="الاسم"   FontSize="15" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="تاريخ الميلاد"   FontSize="15" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="صورة اخراج قيد "   FontSize="15" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="مكان الولادة"      FontSize="15" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock  Text="الرقم الوطني"      FontSize="15" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الجنس"  FontSize="15" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="الوالد\ة"  FontSize="15" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="انقر نقراً مزدوجا لاختيار الوالد\ة"  FontSize="15" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBlock Text="على قيد الحياة"  FontSize="15" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" TextWrapping="Wrap" Foreground="#eee" VerticalAlignment="Center" TextAlignment="Center" Margin="2"/>
+            <TextBox x:Name="txtName" Grid.Column="4" Grid.Row="0" TextAlignment="Right" HorizontalAlignment="Stretch"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="auto" Margin="2"/>
+            <DatePicker x:Name="txtBrithDate" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" Background="Transparent" Foreground="#eee" Text=""  VerticalAlignment="Center" Width="auto" Margin="2" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="txtBrithLocation" Grid.Column="4" Grid.Row="1" TextAlignment="Right" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" />
+            <TextBox x:Name="txtIDNum" Grid.Column="2" Grid.Row="1" TextAlignment="Right" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" />
+            <ComboBox x:Name="txtGender" Grid.Column="4" Grid.Row="2" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Background="Transparent"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Foreground="#eee">
+                <ListBoxItem Background="#393e46">ذكر</ListBoxItem>
+                <ListBoxItem Background="#393e46">انثى</ListBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="txtIsAlive" Grid.Column="2" Grid.Row="2" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Background="Transparent"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Foreground="#eee">
+                <ListBoxItem Background="#393e46">نعم</ListBoxItem>
+                <ListBoxItem Background="#393e46">لا</ListBoxItem>
+            </ComboBox>
+            <TextBlock x:Name="txtSelectedMF" Grid.Column="4" Grid.Row="3" TextAlignment="Right" HorizontalAlignment="Stretch" TextWrapping="Wrap"  Text=""  VerticalAlignment="Center" Width="auto" Margin="2" Foreground="#eeee" Background="#393e46" Height="22"/>
+            <DataGrid x:Name="GrdHw" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="5" VerticalAlignment="Stretch" Height="auto" Width="auto" FrameworkElement.FlowDirection="RightToLeft" AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalContentAlignment="Right" HorizontalAlignment="Stretch" CanUserDeleteRows="False" CanUserAddRows="False" IsReadOnly="True" VerticalScrollBarVisibility="Auto" SelectionChanged="GrdHw_SelectionChanged"  MouseDoubleClick="GrdHw_MouseDoubleClick" Background="#393e46" Foreground="#eee">
+
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#00adb5" />
+                        <Setter Property="Foreground" Value="#eeee" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#00d4de" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style BasedOn="{StaticResource {x:Type DataGridRow}}" TargetType="{x:Type DataGridRow}">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#818995" />
+                                <Setter Property="Foreground" Value="#eeee" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="CWiveOrHusbandName" Binding="{Binding WiveOrHusbandName}" FrameworkElement.FlowDirection="RightToLeft" Header="الاسم الاول" Width="Auto"/>
+                    <DataGridTextColumn x:Name="CWiveOrHusbandLastName" Binding="{Binding WiveOrHusbandLastName}" FrameworkElement.FlowDirection="RightToLeft" Header="اسم العائلة" Width="Auto"/>
+                    <DataGridTextColumn x:Name="CWiveOrHusbandFatherName" Binding="{Binding WiveOrHusbandFatherName}" FrameworkElement.FlowDirection="RightToLeft" Header="اسم الاب" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="BtnSelectPhoto" Click="BtnSelectPhoto_Click" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Margin="2" Background="#393e46" BorderBrush="Transparent">
+                <Button.Content>
+                    <Image x:Name="ImgElementImage"  Source="pack://application:,,,/Images/cv.png" Stretch="Fill"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="BtnShowPhoto" Click="BtnShowPhoto_Click" Background="#00adb5" BorderBrush="#00adb5" Foreground="#eeee"  Content="عرض الصورة بالحجم الكامل" Grid.Column="0" Grid.Row="2"   HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"/>
+            <Button x:Name="BtnAddEditV" Click="BtnAddEditV_Click" Background="#00adb5" BorderBrush="#00adb5" Foreground="#eeee" Content="حفظ"  Grid.Row="9" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="6" Margin="4" />
+        </Grid>
+    </Grid>
+</Window>
