@@ -25,7 +25,7 @@
 
 ## ⚙️ Technical Details
 
-- 💻 **Platform:** Windows Desktop (WinForms / WPF / .NET)
+- 💻 **Platform:** Windows Desktop (WPF / .NET)
 - 🗄️ **Database:** Local or remote SQL Server support
 - 🧠 **Architecture:** Layered structure (UI / BLL / DAL)
 - 🖨️ **Printing:** Custom templates for official police forms and documents
@@ -83,5 +83,5 @@ A detailed user guide and setup instructions will be added once the application 
 
 ## ⚙️ التفاصيل التقنية
 
-- 💻 **المنصة:** تطبيق سطح مكتب (WinForms أو WPF باستخدام .NET)
+- 💻 **المنصة:** تطبيق سطح مكتب ( WPF باستخدام .NET)
 - 🗄️ **قاعدة البيانات:** SQL Server (محلي أو عن بُعد)
